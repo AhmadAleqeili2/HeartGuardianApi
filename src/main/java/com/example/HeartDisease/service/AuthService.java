@@ -2,15 +2,15 @@ package com.example.HeartDisease.service;
 // AuthService.java (Service)
 import com.example.HeartDisease.config.JwtTokenProvider;
 import com.example.HeartDisease.model.Users;
+import com.example.HeartDisease.model.dto.Message;
 import com.example.HeartDisease.model.dto.UserLoginRequest;
 import com.example.HeartDisease.model.dto.UserRegistrationRequest;
 import com.example.HeartDisease.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.http.HttpStatus;
 
 @Service
 public class AuthService {
@@ -24,19 +24,28 @@ public class AuthService {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    public ResponseEntity<String> authenticate(UserLoginRequest loginRequest) {
+    public ResponseEntity<Object> authenticate(UserLoginRequest loginRequest) {
         Users user = userRepository.findByEmail(loginRequest.getEmail());
         if (user != null && passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-            return ResponseEntity.ok(jwtTokenProvider.generateToken(loginRequest.getEmail()));
+            Message message = new Message();
+            message.setMessage(jwtTokenProvider.generateToken(loginRequest.getEmail()));
+            message.setCode(HttpStatus.OK.value());
+            return ResponseEntity.ok(message);
         } else {
-            return ResponseEntity.badRequest().body("Invalid credentials");
+            Message error = new Message();
+            error.setCode(HttpStatus.BAD_REQUEST.value());
+            error.setMessage("Invalid credentials");
+            return ResponseEntity.badRequest().body(error);
         }
     }
 
-    public ResponseEntity<String> registerUser(UserRegistrationRequest registrationRequest) {
+    public ResponseEntity<Object> registerUser(UserRegistrationRequest registrationRequest) {
         // Check if the username already exists
         if (userRepository.findByEmail(registrationRequest.getEmail()) != null) {
-            return ResponseEntity.badRequest().body("User with this username already exists");
+            Message error = new Message();
+            error.setCode(HttpStatus.BAD_REQUEST.value());
+            error.setMessage("User with this email already exists");
+            return ResponseEntity.badRequest().body(error);
         }
 
 
@@ -50,7 +59,10 @@ public class AuthService {
 
         // Save the user in the database
         userRepository.save(user);
-       return ResponseEntity.ok("User registered successfully!");
+        Message message = new Message();
+        message.setMessage("User registered successfully!");
+        message.setCode(HttpStatus.OK.value());
+       return ResponseEntity.ok(message);
     }
 
 

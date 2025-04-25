@@ -4,13 +4,16 @@ import com.example.HeartDisease.model.NotificationModel;
 import com.example.HeartDisease.model.Users;
 import com.example.HeartDisease.model.dto.Feedback;
 import com.example.HeartDisease.model.dto.History;
+import com.example.HeartDisease.model.dto.Message;
 import com.example.HeartDisease.model.dto.Notification;
 import com.example.HeartDisease.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import javax.print.attribute.standard.MediaSize;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -27,9 +30,15 @@ public class NotificationService {
             addNotification.setUser(user);
             user.getNotification().add(addNotification);
             userRepository.save(user);
-            return ResponseEntity.ok("Notification added");
+            Message message = new Message();
+            message.setMessage("Notification added");
+            message.setCode(HttpStatus.OK.value());
+            return ResponseEntity.ok(message);
         }
-        return ResponseEntity.badRequest().body("Notification not added");
+        Message error = new Message();
+        error.setMessage("Notification not added");
+        error.setCode(HttpStatus.BAD_REQUEST.value());
+        return ResponseEntity.badRequest().body(error);
     }
 
     public  ResponseEntity<?> getNotifications(Authentication authentication) {

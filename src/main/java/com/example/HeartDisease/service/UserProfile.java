@@ -29,7 +29,6 @@ public class UserProfile {
         response.setEmail(user.getEmail());
         response.setLastDiagnosis(user.getHistory().get(user.getHistory().size()-1).getDate());
         response.setLastLogin(user.getNotification().get(user.getNotification().size()-1).getDate());
-
         return ResponseEntity.ok(response);
     }
 }

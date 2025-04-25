@@ -24,13 +24,13 @@ public class AuthController {
     }
     // Existing login endpoint
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserLoginRequest loginRequest) {
+    public ResponseEntity<Object> login(@RequestBody UserLoginRequest loginRequest) {
         return authService.authenticate(loginRequest);
     }
 
     // New registration endpoint
     @PostMapping("/register")
-    public ResponseEntity<String> register(@Valid @RequestBody UserRegistrationRequest registrationRequest) {
+    public ResponseEntity<Object> register(@Valid @RequestBody UserRegistrationRequest registrationRequest) {
         return authService.registerUser(registrationRequest);
 
     }

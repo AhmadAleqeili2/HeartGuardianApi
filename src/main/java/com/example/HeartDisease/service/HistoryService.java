@@ -2,8 +2,10 @@ package com.example.HeartDisease.service;
 import com.example.HeartDisease.model.HistoryModel;
 import com.example.HeartDisease.model.Users;
 import com.example.HeartDisease.model.dto.History;
+import com.example.HeartDisease.model.dto.Message;
 import com.example.HeartDisease.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -25,10 +27,16 @@ public class HistoryService {
             addHistory.setUser(user);
             user.getHistory().add(addHistory);
             userRepository.save(user);
-
-            return ResponseEntity.ok("History added");
+            Message message = new Message();
+            message.setMessage("History added");
+            message.setCode(HttpStatus.OK.value());
+            return ResponseEntity.ok(message);
         }
-        return ResponseEntity.badRequest().body("History not added");
+        Message error = new Message();
+        error.setMessage("History not added");
+        error.setCode(HttpStatus.BAD_REQUEST.value());
+
+        return ResponseEntity.badRequest().body(error);
     }
 
     public ResponseEntity<?> getHistorys(Authentication authentication) {
