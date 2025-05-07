@@ -1,8 +1,8 @@
 package com.example.HeartDisease.service;
 import com.example.HeartDisease.model.HistoryModel;
 import com.example.HeartDisease.model.Users;
-import com.example.HeartDisease.model.dto.History;
-import com.example.HeartDisease.model.dto.Message;
+import com.example.HeartDisease.model.dto.user.History;
+import com.example.HeartDisease.model.dto.errorandmessage.Message;
 import com.example.HeartDisease.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

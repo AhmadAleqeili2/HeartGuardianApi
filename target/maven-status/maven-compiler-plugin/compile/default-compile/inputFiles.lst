@@ -1,23 +1,34 @@
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/service/AuthService.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/HistoryModel.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/dto/Feedback.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/dto/History.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/service/NotificationService.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/NotificationModel.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/service/UserProfile.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/config/JwtTokenProvider.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/dto/Message.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/dto/UserInfo.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/config/JwtAuthenticationFilter.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/HeartDiseaseApplication.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/controller/UserDataController.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/dto/Notification.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/config/SecurityConfig.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/dto/UserLoginRequest.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/controller/AuthController.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/service/HistoryService.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/service/FeedBackService.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/Users.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/repository/UserRepository.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/dto/UserRegistrationRequest.java
-/home/ahmad/apps and games/SpringBoot/HeartDisease/src/main/java/com/example/HeartDisease/model/FeedbackModel.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\errorandmessage\Message.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\Users.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\repository\UserRepository.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\service\NotificationService.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\service\EmailService.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\user\Feedback.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\service\deleteService.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\passwordsettings\ResetPasswordRequest.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\user\UserLoginRequest.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\service\FeedBackService.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\user\Notification.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\service\AuthService.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\errorandmessage\ErrorMessage.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\passwordsettings\UpdatePasswd.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\HeartDiseaseApplication.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\controller\UserDataController.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\HistoryModel.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\config\JwtAuthenticationFilter.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\user\History.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\controller\AuthController.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\FeedbackModel.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\config\SecurityConfig.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\NotificationModel.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\service\PasswordResetService.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\user\UserInfo.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\service\UserProfile.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\controller\ResetPasswordController.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\config\JwtTokenProvider.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\passwordsettings\ForgotPassword.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\controller\DeleteAccController.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\service\ErrorService.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\model\dto\user\UserRegistrationRequest.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\config\MailConfig.java
+C:\Users\Ahmad\Desktop\HeartGuardianApi\src\main\java\com\example\HeartDisease\service\HistoryService.java

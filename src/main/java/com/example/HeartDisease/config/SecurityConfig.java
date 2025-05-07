@@ -36,7 +36,8 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Add CORS Config
                 .csrf(csrf -> csrf.disable()) // Disable CSRF to simplify development testing
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login", "/register").permitAll()
+                        .requestMatchers("/login", "/register","/forgotpassword","/resetpassword","/"
+                        ,"/resetPasswordRequest").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

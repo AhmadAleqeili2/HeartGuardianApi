@@ -7,6 +7,7 @@ import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -21,7 +22,8 @@ public class Users {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     @ToString.Exclude
     private FeedbackModel feedback;
-
+    private String resetCode;
+    private LocalDateTime resetCodeExpiration;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<HistoryModel> history;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

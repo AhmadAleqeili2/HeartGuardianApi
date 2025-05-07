@@ -2,10 +2,8 @@ package com.example.HeartDisease.service;
 
 import com.example.HeartDisease.model.NotificationModel;
 import com.example.HeartDisease.model.Users;
-import com.example.HeartDisease.model.dto.Feedback;
-import com.example.HeartDisease.model.dto.History;
-import com.example.HeartDisease.model.dto.Message;
-import com.example.HeartDisease.model.dto.Notification;
+import com.example.HeartDisease.model.dto.errorandmessage.Message;
+import com.example.HeartDisease.model.dto.user.Notification;
 import com.example.HeartDisease.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
-import javax.print.attribute.standard.MediaSize;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -44,7 +41,7 @@ public class NotificationService {
     public  ResponseEntity<?> getNotifications(Authentication authentication) {
         Users user = userRepository.findByEmail(authentication.getName());
 
-        if (user == null || user.getHistory().isEmpty()) {
+        if (user == null || user.getNotification().isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
