@@ -1,9 +1,5 @@
 package com.example.HeartDisease.model;// User.java (Model)
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
@@ -28,6 +24,9 @@ public class Users {
     private List<HistoryModel> history;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<NotificationModel> notification;
+    @Lob
+    @Column(name = "profile_image", columnDefinition = "LONGBLOB")
+    private byte[] profileImage;
 
 // getters and setters
 }
